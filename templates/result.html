@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎉💵Lottery Result💵🎉</title>
+    <style>
+        body { 
+            background-color: #ffffff; 
+            color: #000000; 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 30px;
+        }
+        h1 { color: green; }
+        .numbers { margin: 20px; font-size: 20px; }
+        .prize { color: green; font-weight: bold; font-size: 24px; }
+        .lose { color: red; font-weight: bold; font-size: 24px; }
+        a { text-decoration: none; color: black; font-weight: bold; }
+        a:hover { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Lottery Results</h1>
+    <div class="numbers">
+        <p>Your Numbers: {{ user_numbers }}</p>
+        <p>Machine Numbers: {{ machine_numbers }}</p>
+        <p>Matches: {{ matches }} ({{ count }} numbers)</p>
+    </div>
+    {% if count > 0 %}
+        <p class="prize">{{ prize }}</p>
+    {% else %}
+        <p class="lose">{{ prize }}</p>
+    {% endif %}
+    <a href="/">🔄 Play Again</a>
+</body>
+</html>
